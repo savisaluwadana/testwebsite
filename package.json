@@ -1,0 +1,1 @@
+{"name":"competition-radar","private":true,"type":"module","scripts":{"build":"node build.mjs","test":"node --test feed.test.mjs","start":"node build.mjs && node dev.mjs","dev":"node build.mjs && node dev.mjs"}}

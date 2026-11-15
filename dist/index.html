@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="A personal dashboard for engineering competitions, hackathons and startup opportunities.">
+<title>Competition Radar · Opportunity tracker</title>
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="polish.css">
+</head>
+<body>
+<aside class="sidebar">
+  <a href="#discover" class="brand"><span class="brand-icon">⌖</span><span>competition<span class="brand-sub">RADAR</span></span></a>
+  <div class="nav-label">WORKSPACE</div>
+  <nav id="nav" aria-label="Dashboard navigation">
+    <button class="nav-btn active" data-view="discover"><span>⌕</span>Discover</button>
+    <button class="nav-btn" data-view="saved"><span>◇</span>Saved opportunities <b id="saved-count">0</b></button>
+    <button class="nav-btn" data-view="compare"><span>⇄</span>Compare <b id="compare-count">0</b></button>
+    <button class="nav-btn" data-view="calendar"><span>▦</span>Deadline calendar</button>
+    <button class="nav-btn" data-view="pipeline"><span>☷</span>Applications</button>
+    <button class="nav-btn" data-view="refresh"><span>↻</span>Daily refresh</button>
+  </nav>
+  <div class="side-bottom">
+    <div class="profile"><div class="avatar">SL</div><div><strong>Builder workspace</strong><small>Sri Lanka · global focus</small></div></div>
+    <p>Research carefully. Build deliberately.</p>
+  </div>
+</aside>
+<main>
+  <header class="topbar"><div><span class="breadcrumb">Workspace</span><span class="slash">/</span><strong id="breadcrumb">Discover</strong></div><div class="top-actions"><div class="live"><span class="dot"></span><span id="fetch-label">Source-backed tracker</span></div><button class="primary fetch-button" data-fetch>↻ Fetch now</button></div></header>
+  <div class="content">
+    <section class="hero"><div class="hero-text"><div class="eyebrow"><span class="dot"></span> YOUR OPPORTUNITY INTELLIGENCE</div><h1 id="page-title">Find your next<br>winning build.</h1><p id="page-subtitle">Discover competitions worth your time, track the deadlines, and turn promising opportunities into shipped projects.</p><div class="hero-actions"><button class="primary" data-explore>Explore opportunities <span>→</span></button><button class="secondary" data-view="calendar">View calendar</button></div></div><div class="radar" aria-hidden="true"><div class="ring r1"></div><div class="ring r2"></div><div class="ring r3"></div><div class="axis a1"></div><div class="axis a2"></div><div class="sweep"></div><i class="point p1"></i><i class="point p2"></i><i class="point p3"></i><i class="point p4"></i><span class="radar-label">SIGNAL / 01</span></div></section>
+    <section class="stats" aria-label="Opportunity summary"><div class="stat"><span>ACTIVE OPPORTUNITIES</span><b id="stat-active">—</b><small>Open or upcoming deadlines</small></div><div class="stat"><span>DUE IN 7 DAYS</span><b id="stat-soon">—</b><small>Review before committing</small></div><div class="stat"><span>SAVED FOR LATER</span><b id="stat-saved">—</b><small>Your shortlist</small></div><div class="stat"><span>IN PROGRESS</span><b id="stat-progress">—</b><small>Applications underway</small></div></section>
+    <section id="workspace" aria-live="polite"></section>
+  </div>
+  <footer>Competition Radar <span>·</span> Always confirm official rules before applying. Personal tracking stays in this browser.</footer>
+</main>
+<dialog id="details"><div id="details-content"></div></dialog>
+<div id="compare-tray" class="compare-tray" hidden></div>
+<div id="toast" role="status"></div>
+<script src="app.js" defer></script>
+</body>
+</html>
